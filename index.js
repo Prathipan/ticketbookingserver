@@ -28,6 +28,9 @@ mongoose.connection.on("connected" , () => {
 
 app.use(cookieParser());
 app.use(express.json());
+app.get("/",(req,res)=> {
+    res.send("Hello from node app");
+})
 app.use("/api/auth" , authRoute);
 app.use("/api/movies" , moviesRoute);
 app.use("/api/theater" , theaterRoute);
